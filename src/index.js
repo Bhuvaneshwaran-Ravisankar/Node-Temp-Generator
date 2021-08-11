@@ -1,43 +1,28 @@
 const inquirer = require("inquirer");
-const path = require("path");
+const fs = require("fs");
 
-inquirer
-  .prompt([
-    {
-      type: "text",
-      name: "Application-Name",
-      message: "Name of the project",
-      default: path.basename(process.cwd()),
-    },
-    {
-      type: "list",
-      name: "Application-Type",
-      message: "Type of the project",
-      choices: ["node-express", "Angular", "React", "VueJS"],
-      default: path.basename(process.cwd()), //... get current directory name (Core NodeJS property - Path) ...//
-    },
-  ])
-  .then((result) => {
-    let resp = JSON.parse(JSON.stringify(result));
-    baseConfig.name = resp.name;
-    conf.name = result.name;
-    console.log(baseConfig);
-  })
-  .catch((err) => {
-    console.error(err);
-  });
+const CHOICES = fs.readdirSync(`${__dirname}/templates`);
+console.log(CHOICES);
 
-let conf = {
-  name: "",
-};
-
-let baseConfig = {
-  name: "Defined",
-  version: 1.0,
-  builds: [
-    {
-      src: "src/index.js",
+const QUESTIONS = [
+  {
+    name: "project-choice",
+    type: "list",
+    message: "What project template would you like to generate?",
+    choices: CHOICES,
+  },
+  {
+    name: "project-name",
+    type: "input",
+    message: "Project name:",
+    validate: function (input) {
+      if (/^([A-Za-z\-\_\d])+$/.test(input)) return true;
+      else
+        return "Project name may only include letters, numbers, underscores and hashes.";
     },
-  ],
-  routes: [{ src: "/.*", dest: "src/index.js" }],
-};
+  },
+];
+
+inquirer.prompt(QUESTIONS).then((answers) => {
+  console.log(answers);
+});
