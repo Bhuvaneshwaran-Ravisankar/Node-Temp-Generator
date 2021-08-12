@@ -1,6 +1,10 @@
+#!/usr/bin/env/ node
+
 const inquirer = require("inquirer");
 const fs = require("fs");
 const createDirectory = require("./createDirectory");
+const process = require("process");
+const CURR_DIR = process.cwd();
 
 //... Template directory ...//
 const CHOICES = fs.readdirSync(`${__dirname}/templates`);
@@ -35,6 +39,8 @@ const QUESTIONS = [
 inquirer.prompt(QUESTIONS).then((answers) => {
   ans.name = answers.projectName;
   ans.template = answers.projectChoice;
-  console.log(ans);
-  createDirectory(ans);
+  var templatePath = `${__dirname}` + "/templates" + "/" + ans.template;
+  var projectPath = `${CURR_DIR}` + "/" + ans.name;
+  fs.mkdirSync(projectPath);
+  createDirectory(templatePath, ans.name);
 });
