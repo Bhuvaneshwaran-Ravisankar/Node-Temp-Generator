@@ -4,6 +4,9 @@
   "description": "A CLI to help generate ready to use node-express templates",
   "main": "src/index.js",
   "scripts": {},
+  "bin": {
+    "generate": "src/index.js"
+  },
   "keywords": [],
   "author": "Bhuvaneshwaran Ravisankar",
   "license": "ISC",

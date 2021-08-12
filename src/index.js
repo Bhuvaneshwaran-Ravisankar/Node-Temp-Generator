@@ -1,28 +1,40 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
+const createDirectory = require("./createDirectory");
 
+//... Template directory ...//
 const CHOICES = fs.readdirSync(`${__dirname}/templates`);
-console.log(CHOICES);
 
+//... Answer object ...//
+let ans = {
+  name: "",
+  template: "",
+};
+
+//... Question set for inquirer ...//
 const QUESTIONS = [
   {
-    name: "project-choice",
+    name: "projectChoice",
     type: "list",
     message: "What project template would you like to generate?",
     choices: CHOICES,
   },
   {
-    name: "project-name",
+    name: "projectName",
     type: "input",
     message: "Project name:",
     validate: function (input) {
-      if (/^([A-Za-z\-\_\d])+$/.test(input)) return true;
+      if (/^([a-z\-\_\d])+$/.test(input)) return true;
       else
-        return "Project name may only include letters, numbers, underscores and hashes.";
+        return "Project name may only include small case letters, numbers, underscores and hashes.";
     },
   },
 ];
 
+//... Iquirer prompt ...//
 inquirer.prompt(QUESTIONS).then((answers) => {
-  console.log(answers);
+  ans.name = answers.projectName;
+  ans.template = answers.projectChoice;
+  console.log(ans);
+  createDirectory(ans);
 });
