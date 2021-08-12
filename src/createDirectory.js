@@ -21,18 +21,3 @@ async function createDirectory(templatePath, projectName) {
 }
 
 module.exports = createDirectory;
-
-// var projectPath = `${CURR_DIR}` + "/" + projectName;
-//   await fs.mkdirSync(projectPath);
-//   const filesFromTemplate = await fs.readdirSync(templatePath);
-
-//   filesFromTemplate.forEach((file) => {
-//     const pathToCreateFile = projectPath + "/" + file;
-//     const originalFilePath = templatePath + "/" + file;
-//     const fileStats = fs.statSync(originalFilePath);
-//     if (fileStats.isFile()) {
-//       const fileContent = fs.readFileSync(originalFilePath, "utf8");
-//       fs.writeFileSync(pathToCreateFile, fileContent, "utf-8");
-//     } else if (fileStats.isDirectory) {
-//       fs.mkdirSync(pathToCreateFile);
-//       createDirectory(templatePath + "/" + file, projectPath + "/" + file);
