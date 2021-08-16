@@ -11,7 +11,12 @@
     "type": "git",
     "url": "git+https://github.com/Bhuvaneshwaran-Ravisankar/Node-Temp-Generator.git"
   },
+  "bugs": {
+    "url": "https://github.com/Bhuvaneshwaran-Ravisankar/Node-Temp-Generator/issues"
+  },
+  "homepage": "https://github.com/Bhuvaneshwaran-Ravisankar/Node-Temp-Generator#readme",
   "keywords": [
+    "create node js",
     "nodeJs",
     "node-server",
     "node-setup",
