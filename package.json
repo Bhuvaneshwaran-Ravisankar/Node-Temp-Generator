@@ -1,15 +1,25 @@
 {
-  "name": "node-package",
-  "version": "1.0.0",
+  "name": "node-express-server",
+  "version": "1.0.1",
   "description": "A CLI to help generate ready to use node-express templates",
   "main": "./src/index.js",
   "scripts": {},
   "bin": {
-    "generate": "src/index.js"
+    "generate-node": "src/index.js"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bhuvaneshwaran-Ravisankar/Node-Temp-Generator.git"
+  },
+  "keywords": [
+    "nodeJs",
+    "node-server",
+    "node-setup",
+    "node-express-server",
+    "node-template"
+  ],
   "author": "Bhuvaneshwaran Ravisankar",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "body-parser": "^1.19.0",
     "caporal": "^1.4.0",
