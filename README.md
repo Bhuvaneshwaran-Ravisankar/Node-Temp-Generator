@@ -9,7 +9,7 @@ Download the cli-package with global -g keyword. This downloads the package as g
 To create a Mongo-Express-Nodejs template, do the following steps
 
 ```
-create-nodejs
+> create-nodejs
 ```
 
 Select the desired template and provide a valid name for the project.
@@ -17,12 +17,12 @@ Select the desired template and provide a valid name for the project.
 To create a nodemodules enter following command in project path
 
 ```
-cd /path/to/project
-npm install
+> cd /path/to/project
+> npm install
 ```
 
 To run the application
 
 ```
-npm start
+> npm start
 ```
