@@ -5,7 +5,6 @@ const CURR_DIR = process.cwd();
 
 async function createDirectory(templatePath, projectName) {
   const filesToCreate = await fs.readdirSync(templatePath);
-  console.log(filesToCreate);
   filesToCreate.forEach((file) => {
     const actualFilepath = templatePath + "/" + file;
     const fileStatus = fs.statSync(actualFilepath);

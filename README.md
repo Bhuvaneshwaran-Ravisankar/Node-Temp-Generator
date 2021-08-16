@@ -6,7 +6,11 @@ A node cli package to generate a node-express-mongo framework
 
 Download the cli-package with global -g keyword. This downloads the package as global which can be accessibe any where through out the directories.
 
-To create a Mongo-Express-Nodejs template, do the following steps
+```
+> npm install -g node-init-cli
+```
+
+####To create a Mongo-Express-Nodejs template, do the following steps
 
 ```
 > create-nodejs
