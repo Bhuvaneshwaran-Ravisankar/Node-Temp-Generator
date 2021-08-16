@@ -1,5 +1,5 @@
 {
-  "name": "node-express",
+  "name": "express-server-generator",
   "version": "1.0.0",
   "description": "A CLI to help generate ready to use node-express templates",
   "main": "./src/index.js",
