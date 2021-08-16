@@ -10,7 +10,7 @@ Download the cli-package with global -g keyword. This downloads the package as g
 > npm install -g node-init-cli
 ```
 
-####To create a Mongo-Express-Nodejs template, do the following steps
+To create a Mongo-Express-Nodejs template, do the following steps
 
 ```
 > create-nodejs
