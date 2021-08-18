@@ -42,5 +42,7 @@ inquirer.prompt(QUESTIONS).then((answers) => {
   var templatePath = `${__dirname}` + "/templates" + "/" + ans.template;
   var projectPath = `${CURR_DIR}` + "/" + ans.name;
   fs.mkdirSync(projectPath);
+  console.log("Starting to create project.....");
   createDirectory(templatePath, ans.name);
+  console.log("Project Created Successfully...Just navigate and surf...😊");
 });
